@@ -4,28 +4,7 @@ namespace AddressBook
 	public class AddContacts
 	{
         public List<CreateContacts> addressBookSysyem = new List<CreateContacts>();
-        //public void createContact()
-        //{
-        //    CreateContacts contacts = new CreateContacts();
-
-        //    Console.WriteLine("Enter First Name: ");
-        //    contacts.First_Name = Console.ReadLine();
-        //    Console.WriteLine("Enter Last Name: ");
-        //    contacts.Last_Name = Console.ReadLine();
-        //    Console.WriteLine("Enter Address: ");
-        //    contacts.Address = Console.ReadLine();
-        //    Console.WriteLine("Enter City: ");
-        //    contacts.city = Console.ReadLine();
-        //    Console.WriteLine("Enter the State: ");
-        //    contacts.state = Console.ReadLine();
-        //    Console.WriteLine("Enter the zip");
-        //    contacts.zip = Convert.ToInt32(Console.ReadLine());
-        //    Console.WriteLine("Enter Phone Number: ");
-        //    contacts.PhoneNo = Convert.ToInt32(Console.ReadLine());
-        //    Console.WriteLine("Enter Email Address: ");
-        //    contacts.Email = Console.ReadLine();
-        //    addressBookSysyem.Add(contacts);
-        //}
+        
         public void addPerson()
         {
             CreateContacts newcontact = new CreateContacts();
