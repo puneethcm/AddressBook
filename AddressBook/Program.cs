@@ -11,21 +11,34 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("\nWelcome to AddressBook System");
-        CreateContacts contacts = new CreateContacts()
+        Console.WriteLine("Welcome to Address Book system");
+
+        bool value = true;
+
+        while (value)
         {
-            First_Name = "Puneeth",
-            Middle_Name = "Kumar",
-            Last_Name = "C M",
-            Address = "Nittuvalli",
-            city = "Davangere",
-            state = "Karnataka",
-            zip = 577004,
-            PhoneNo = 8296524711,
-            Email = "puneethkumarcm8050@gmail.com"
-        };
-        Console.WriteLine(contacts.First_Name + "\n" + contacts.Middle_Name + "\n" + contacts.Last_Name + "\n" + contacts.Address + "\n" + contacts.city + "\n"
-        + contacts.state + "\n" + contacts.zip + "\n" + contacts.PhoneNo + "\n" + contacts.Email);
-        Console.ReadLine();
+            Console.WriteLine("\nPlease select the Options :\n" +
+                "1)Enter Details & add Contact in List\n" +
+                "2)Add new Contact\n");
+
+            int choice = Convert.ToInt32(Console.ReadLine());
+
+            switch (choice)
+            {
+                case 1:
+                    AddContacts address1 = new AddContacts();
+                    //address1.createContact();
+                    Console.WriteLine("Entered Details of Person given as :");
+                    address1.addPerson();
+                    address1.Display();
+                    break;
+                default:
+                    Console.WriteLine("Please choice correct option");
+                    break;
+            }
+            value = false;
+            break;
+        }
+        Console.ReadLine(); 
     }
 }
