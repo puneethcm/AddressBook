@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 namespace AddressBook
 {
 	public class AddContacts
@@ -20,19 +20,7 @@ namespace AddressBook
             Console.WriteLine("Enter the State: ");
             contacts.state = Console.ReadLine();
             Console.WriteLine("Enter the zip");
-            bool zip = true;
-            while (zip)
-            {
-                contacts.zip = Convert.ToString(Console.ReadLine());
-                if (contacts.zip.Length < 6)
-                {
-                    Console.WriteLine("Zip must be 6 digit");
-                }
-                else
-                {
-                    break;
-                }
-            }
+            contacts.zip = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter Phone Number: ");
             contacts.PhoneNo = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter Email Address: ");
@@ -70,7 +58,7 @@ namespace AddressBook
 
             Console.WriteLine("Enter Zip Code: ");
 
-            newcontact.zip = Convert.ToString(Console.ReadLine());
+            newcontact.zip = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Enter Phone Number: ");
             newcontact.PhoneNo = Convert.ToInt64(Console.ReadLine());
