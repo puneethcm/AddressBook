@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -11,8 +11,7 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("!!!Welcome To AddressBook Program!!!!");
-        //bool value = true;
+        Console.WriteLine("Welcome To Address Book Program");
         Console.WriteLine("Choose any option below");
         Console.WriteLine("1:Create Contact\n2:Add conctact\n3:Edit contact");
         int choice = Convert.ToInt32(Console.ReadLine());
@@ -35,8 +34,6 @@ internal class Program
 
             case 3:
                 AddContacts editContact = new AddContacts();
-                editContact.GetcreateContact();
-                //editContact.addPerson();
                 editContact.EditContact();
                 editContact.Display();
                 break;
