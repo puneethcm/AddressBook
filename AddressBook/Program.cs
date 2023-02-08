@@ -34,6 +34,7 @@ internal class Program
 
             case 3:
                 AddContacts editContact = new AddContacts();
+                editContact.GetcreateContact();
                 editContact.EditContact();
                 editContact.Display();
                 break;
