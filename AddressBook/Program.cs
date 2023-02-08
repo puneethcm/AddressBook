@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -34,6 +34,7 @@ internal class Program
 
             case 3:
                 AddContacts editContact = new AddContacts();
+                editContact.GetcreateContact();
                 editContact.EditContact();
                 editContact.Display();
                 break;

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 namespace AddressBook
 {
 	public class AddContacts
@@ -79,14 +79,15 @@ namespace AddressBook
                 if (contact.First_Name == FirstName)
                 {
                     Console.WriteLine(" please Enter Details Do You Want To Edit ");
-                    Console.WriteLine("Select options to Edit Details :\n" +
-                        "1.Last_Name\n" + "2.Address\n" + "3.city\n" +
-                        "4. state\n" + " 5.zip Code\n" + "6.Phone Number\n" + "7.Email\n");
+                    Console.WriteLine("Select options to Edit Details :\n" +"1:First_Name"+
+                        "2:Last_Name\n" + "3:Address\n" + "4:City\n" +
+                        "5:State\n" + " 6:zip Code\n" + "7:Phone Number\n" + "8:Email\n");
 
                     int option = Convert.ToInt32(Console.ReadLine());
 
                     switch (option)
                     {
+
                         case 1:
                             Console.WriteLine("Enter Last Name");
                             contact.First_Name = Console.ReadLine();
