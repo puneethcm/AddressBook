@@ -14,7 +14,7 @@ internal class Program
         Console.WriteLine("!!!Welcome To AddressBook Program!!!!");
         //bool value = true;
         Console.WriteLine("Choose any option below");
-        Console.WriteLine("1:Create Contact\n2:Add conctact");
+        Console.WriteLine("1:Create Contact\n2:Add conctact\n3:Edit contact");
         int choice = Convert.ToInt32(Console.ReadLine());
         switch (choice)
         {
@@ -31,6 +31,14 @@ internal class Program
                 Console.WriteLine("Entered Details of Person given as :");
                 addContact.addPerson();
                 addContact.Display();
+                break;
+
+            case 3:
+                AddContacts editContact = new AddContacts();
+                editContact.GetcreateContact();
+                //editContact.addPerson();
+                editContact.EditContact();
+                editContact.Display();
                 break;
             default:
                 Console.WriteLine("Please choice correct option");
