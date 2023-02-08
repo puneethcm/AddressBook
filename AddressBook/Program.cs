@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -25,14 +25,6 @@ internal class Program
         Console.WriteLine("\nEnter First Name of Person :");
         newcontact.First_Name = Console.ReadLine();
 
-        foreach (CreateContacts contact in addressList)
-        {
-            if (contact.First_Name == newcontact.First_Name)
-            {
-                Console.WriteLine("\nPerson with this Name Already Exists");
-                return;
-            }
-        }
         Console.WriteLine("Enter Last Name: ");
         newcontact.Last_Name = Console.ReadLine();
 
