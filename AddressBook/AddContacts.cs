@@ -3,10 +3,13 @@ namespace AddressBook
 {
 	public class AddContacts
 	{
-        public List<CreateContacts> addressBookSysyem = new List<CreateContacts>();
-        //public void createContact()
-        //{
-        //    CreateContacts contacts = new CreateContacts();
+        public List<CreateContacts> addressList = new List<CreateContacts>();
+        public List<CreateContacts> addressList1 = new List<CreateContacts>();
+        public void GetcreateContact()
+        {
+
+            CreateContacts contact = new CreateContacts();
+            contact.createContact();
 
         //    Console.WriteLine("Enter First Name: ");
         //    contacts.First_Name = Console.ReadLine();
@@ -24,8 +27,9 @@ namespace AddressBook
         //    contacts.PhoneNo = Convert.ToInt32(Console.ReadLine());
         //    Console.WriteLine("Enter Email Address: ");
         //    contacts.Email = Console.ReadLine();
-        //    addressBookSysyem.Add(contacts);
-        //}
+        //    addressList1.Add(contact);
+        }
+
         public void addPerson()
         {
             CreateContacts newcontact = new CreateContacts();
@@ -33,7 +37,7 @@ namespace AddressBook
             Console.WriteLine("Enter First Name of Person :");
             newcontact.First_Name = Console.ReadLine();
 
-            foreach (CreateContacts contact in addressBookSysyem)
+            foreach (CreateContacts contact in addressList)
             {
                 if (contact.First_Name == newcontact.First_Name)
                 {
@@ -54,6 +58,7 @@ namespace AddressBook
             newcontact.state = Console.ReadLine();
 
             Console.WriteLine("Enter Zip Code: ");
+
             newcontact.zip = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Enter Phone Number: ");
@@ -62,20 +67,20 @@ namespace AddressBook
             Console.WriteLine("Enter Email-Id");
             newcontact.Email = Console.ReadLine();
 
-            addressBookSysyem.Add(newcontact);
+            addressList1.Add(newcontact);
         }
         public void Display()
         {
-            foreach (CreateContacts contact in addressBookSysyem)
+            foreach (CreateContacts contact in addressList1)
             {
-                Console.WriteLine("First Name : " + contact.First_Name);
-                Console.WriteLine("Last Name : " + contact.Last_Name);
-                Console.WriteLine("Address : " + contact.Address);
-                Console.WriteLine("City : " + contact.city);
-                Console.WriteLine("state : " + contact.state);
-                Console.WriteLine("Zip code :  " + contact.zip);
-                Console.WriteLine("Phone No : " + contact.PhoneNo);
-                Console.WriteLine("Email Id : " + contact.Email);
+                Console.WriteLine("\nFirst Name : " + contact.First_Name);
+                Console.WriteLine("\nLast Name : " + contact.Last_Name);
+                Console.WriteLine("\nAddress : " + contact.Address);
+                Console.WriteLine("\nCity : " + contact.city);
+                Console.WriteLine("\nState : " + contact.state);
+                Console.WriteLine("\nZip code :  " + contact.zip);
+                Console.WriteLine("\nPhone No : " + contact.PhoneNo);
+                Console.WriteLine("\nEmail Id : " + contact.Email);
             }
         }
     }

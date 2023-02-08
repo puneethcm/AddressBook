@@ -11,34 +11,31 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Welcome to Address Book system");
-
-        bool value = true;
-
-        while (value)
+        Console.WriteLine("!!!Welcome To AddressBook Program!!!!");
+        //bool value = true;
+        Console.WriteLine("Choose any option below");
+        Console.WriteLine("1:Create Contact\n2:Add conctact");
+        int choice = Convert.ToInt32(Console.ReadLine());
+        switch (choice)
         {
-            Console.WriteLine("\nPlease select the Options :\n" +
-                "1)Enter Details & add Contact in List\n" +
-                "2)Add new Contact\n");
+            case 1:
+                AddContacts createContact = new AddContacts();
+                Console.WriteLine(" ");
+                createContact.GetcreateContact();
+                createContact.Display();
+                break;
 
-            int choice = Convert.ToInt32(Console.ReadLine());
-
-            switch (choice)
-            {
-                case 1:
-                    AddContacts address1 = new AddContacts();
-                    //address1.createContact();
-                    Console.WriteLine("Entered Details of Person given as :");
-                    address1.addPerson();
-                    address1.Display();
-                    break;
-                default:
-                    Console.WriteLine("Please choice correct option");
-                    break;
-            }
-            value = false;
-            break;
+            case 2:
+                AddContacts addContact = new AddContacts();
+                addContact.GetcreateContact();
+                Console.WriteLine("Entered Details of Person given as :");
+                addContact.addPerson();
+                addContact.Display();
+                break;
+            default:
+                Console.WriteLine("Please choice correct option");
+                break;
         }
-        Console.ReadLine(); 
+        Console.ReadLine();
     }
 }
