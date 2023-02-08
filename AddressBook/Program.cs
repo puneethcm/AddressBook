@@ -40,10 +40,9 @@ internal class Program
                 break;
 
             case 4:
-                AddContacts deleteCobtact = new AddContacts();
-                deleteCobtact.GetcreateContact();
-                deleteCobtact.DeleteContact();
-                deleteCobtact.Display();
+                DeleteContact deleteCobtact = new DeleteContact();
+                deleteCobtact.DeleteContacts();
+                
                 break;
             default:
                 Console.WriteLine("Please choice correct option");

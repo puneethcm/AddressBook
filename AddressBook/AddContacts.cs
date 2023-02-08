@@ -4,6 +4,7 @@ namespace AddressBook
 	public class AddContacts
 	{
         public List<CreateContacts> addressList = new List<CreateContacts>();
+        
         public void GetcreateContact()
         {
 
@@ -28,19 +29,23 @@ namespace AddressBook
 
             addressList.Add(contacts);
         }
+        public List<CreateContacts> GetList()
+        {
+            return addressList;
+        }
 
         public void addPerson()
         {
             CreateContacts newcontact = new CreateContacts();
 
-            Console.WriteLine("Enter First Name of Person :");
+            Console.WriteLine("\nEnter First Name of Person :");
             newcontact.First_Name = Console.ReadLine();
 
             foreach (CreateContacts contact in addressList)
             {
                 if (contact.First_Name == newcontact.First_Name)
                 {
-                    Console.WriteLine("Person with this Name Already Exists");
+                    Console.WriteLine("\nPerson with this Name Already Exists");
                     return;
                 }
             }
@@ -71,14 +76,14 @@ namespace AddressBook
 
         public void EditContact()
         {
-            Console.WriteLine("Please Enter First Name of Person to Edit");
+            Console.WriteLine("\nPlease Enter First Name of Person to Edit");
             string FirstName = Console.ReadLine();
 
             foreach (CreateContacts contact in addressList)
             {
                 if (contact.First_Name == FirstName)
                 {
-                    Console.WriteLine(" please Enter Details Do You Want To Edit ");
+                    Console.WriteLine("\nPlease Enter Details Do You Want To Edit ");
                     Console.WriteLine("Select options to Edit Details :\n" +"1:First_Name"+
                         "2:Last_Name\n" + "3:Address\n" + "4:City\n" +
                         "5:State\n" + " 6:zip Code\n" + "7:Phone Number\n" + "8:Email\n");
@@ -136,22 +141,6 @@ namespace AddressBook
             }
         }
 
-        public void DeleteContact()
-        {
-            Console.WriteLine("Enter Name Do You Want to Delete");
-            string FirstName = Console.ReadLine();
-
-            foreach (CreateContacts contact in addressList)
-            {
-                if (contact.First_Name.ToLower() == FirstName.ToLower())
-                {
-                    addressList.Remove(contact);
-                    Console.WriteLine("Entered First Name is Deleted from the List");
-                    return;
-                }
-            }
-            Console.WriteLine("Contact not Found ");
-        }
         public void Display()
         {
             foreach (CreateContacts contact in addressList)
