@@ -3,29 +3,32 @@ namespace AddressBook
 {
 	public class AddContacts
 	{
-        public List<CreateContacts> addressBookSysyem = new List<CreateContacts>();
-        //public void createContact()
-        //{
-        //    CreateContacts contacts = new CreateContacts();
+        public List<CreateContacts> addressList = new List<CreateContacts>();
+        public void GetcreateContact()
+        {
 
-        //    Console.WriteLine("Enter First Name: ");
-        //    contacts.First_Name = Console.ReadLine();
-        //    Console.WriteLine("Enter Last Name: ");
-        //    contacts.Last_Name = Console.ReadLine();
-        //    Console.WriteLine("Enter Address: ");
-        //    contacts.Address = Console.ReadLine();
-        //    Console.WriteLine("Enter City: ");
-        //    contacts.city = Console.ReadLine();
-        //    Console.WriteLine("Enter the State: ");
-        //    contacts.state = Console.ReadLine();
-        //    Console.WriteLine("Enter the zip");
-        //    contacts.zip = Convert.ToInt32(Console.ReadLine());
-        //    Console.WriteLine("Enter Phone Number: ");
-        //    contacts.PhoneNo = Convert.ToInt32(Console.ReadLine());
-        //    Console.WriteLine("Enter Email Address: ");
-        //    contacts.Email = Console.ReadLine();
-        //    addressBookSysyem.Add(contacts);
-        //}
+            CreateContacts contacts = new CreateContacts();
+
+            Console.WriteLine("Enter First Name: ");
+            contacts.First_Name = Console.ReadLine();
+            Console.WriteLine("Enter Last Name: ");
+            contacts.Last_Name = Console.ReadLine();
+            Console.WriteLine("Enter Address: ");
+            contacts.Address = Console.ReadLine();
+            Console.WriteLine("Enter City: ");
+            contacts.city = Console.ReadLine();
+            Console.WriteLine("Enter the State: ");
+            contacts.state = Console.ReadLine();
+            Console.WriteLine("Enter the zip");
+            contacts.zip = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Phone Number: ");
+            contacts.PhoneNo = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Email Address: ");
+            contacts.Email = Console.ReadLine();
+
+            addressList.Add(contacts);
+        }
+
         public void addPerson()
         {
             CreateContacts newcontact = new CreateContacts();
@@ -33,7 +36,7 @@ namespace AddressBook
             Console.WriteLine("Enter First Name of Person :");
             newcontact.First_Name = Console.ReadLine();
 
-            foreach (CreateContacts contact in addressBookSysyem)
+            foreach (CreateContacts contact in addressList)
             {
                 if (contact.First_Name == newcontact.First_Name)
                 {
@@ -54,6 +57,7 @@ namespace AddressBook
             newcontact.state = Console.ReadLine();
 
             Console.WriteLine("Enter Zip Code: ");
+
             newcontact.zip = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Enter Phone Number: ");
@@ -62,20 +66,87 @@ namespace AddressBook
             Console.WriteLine("Enter Email-Id");
             newcontact.Email = Console.ReadLine();
 
-            addressBookSysyem.Add(newcontact);
+            addressList.Add(newcontact);
         }
+
+        public void EditContact()
+        {
+            Console.WriteLine("Please Enter First Name of Person to Edit");
+            string FirstName = Console.ReadLine();
+
+            foreach (CreateContacts contact in addressList)
+            {
+                if (contact.First_Name == FirstName)
+                {
+                    Console.WriteLine(" please Enter Details Do You Want To Edit ");
+                    Console.WriteLine("Select options to Edit Details :\n" +
+                        "1.Last_Name\n" + "2.Address\n" + "3.city\n" +
+                        "4. state\n" + " 5.zip Code\n" + "6.Phone Number\n" + "7.Email\n");
+
+                    int option = Convert.ToInt32(Console.ReadLine());
+
+                    switch (option)
+                    {
+                        case 1:
+                            Console.WriteLine("Enter Last Name");
+                            contact.First_Name = Console.ReadLine();
+                            break;
+                        case 2:
+                            Console.WriteLine("Enter Last Name");
+                            contact.Last_Name = Console.ReadLine();
+                            break;
+
+                        case 3:
+                            Console.WriteLine("Enter Address");
+                            contact.Address = Console.ReadLine();
+                            break;
+
+                        case 4:
+                            Console.WriteLine("Enter City");
+                            contact.city = Console.ReadLine();
+                            break;
+
+                        case 5:
+                            Console.WriteLine("Enter State");
+                            contact.state = Console.ReadLine();
+                            break;
+
+                        case 6:
+                            Console.WriteLine("Enter Zip Code");
+                            contact.zip = Convert.ToInt32(Console.ReadLine());
+                            break;
+
+                        case 7:
+                            Console.WriteLine("Enter Phone Number");
+                            contact.PhoneNo = Convert.ToInt32(Console.ReadLine());
+                            break;
+
+                        case 8:
+                            Console.WriteLine("Enter Email");
+                            contact.Email = Console.ReadLine();
+                            break;
+
+                        default:
+                            Console.WriteLine("Wrong Option");
+                            break;
+                    }
+                }
+                Console.WriteLine("sorry!!! Not Found");
+            }
+        }
+
         public void Display()
         {
-            foreach (CreateContacts contact in addressBookSysyem)
+            foreach (CreateContacts contact in addressList)
             {
-                Console.WriteLine("First Name : " + contact.First_Name);
-                Console.WriteLine("Last Name : " + contact.Last_Name);
-                Console.WriteLine("Address : " + contact.Address);
-                Console.WriteLine("City : " + contact.city);
-                Console.WriteLine("state : " + contact.state);
-                Console.WriteLine("Zip code :  " + contact.zip);
-                Console.WriteLine("Phone No : " + contact.PhoneNo);
-                Console.WriteLine("Email Id : " + contact.Email);
+                Console.WriteLine("\nFirst Name : " + contact.First_Name);
+                Console.WriteLine("\nLast Name : " + contact.Last_Name);
+                Console.WriteLine("\nAddress : " + contact.Address);
+                Console.WriteLine("\nCity : " + contact.city);
+                Console.WriteLine("\nState : " + contact.state);
+                Console.WriteLine("\nZip code :  " + contact.zip);
+                Console.WriteLine("\nPhone No : " + contact.PhoneNo);
+                Console.WriteLine("\nEmail Id : " + contact.Email);
             }
         }
     }

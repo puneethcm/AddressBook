@@ -12,6 +12,7 @@ internal class Program
     public List<CreateContacts> addressList = new List<CreateContacts>();
     public static void Main(string[] args)
     {
+<<<<<<< HEAD
         Program createContacts = new Program();
         createContacts.GetCreateContacts();
         createContacts.Display();
@@ -25,29 +26,42 @@ internal class Program
         bool value = true;
 
         while (value)
+=======
+        Console.WriteLine("!!!Welcome To AddressBook Program!!!!");
+        //bool value = true;
+        Console.WriteLine("Choose any option below");
+        Console.WriteLine("1:Create Contact\n2:Add conctact\n3:Edit contact");
+        int choice = Convert.ToInt32(Console.ReadLine());
+        switch (choice)
+>>>>>>> UC3-EditContact
         {
-            Console.WriteLine("\nPlease select the Options :\n" +
-                "1)Enter Details & add Contact in List\n" +
-                "2)Add new Contact\n");
+            case 1:
+                AddContacts createContact = new AddContacts();
+                Console.WriteLine(" ");
+                createContact.GetcreateContact();
+                createContact.Display();
+                break;
 
-            int choice = Convert.ToInt32(Console.ReadLine());
+            case 2:
+                AddContacts addContact = new AddContacts();
+                addContact.GetcreateContact();
+                Console.WriteLine("Entered Details of Person given as :");
+                addContact.addPerson();
+                addContact.Display();
+                break;
 
-            switch (choice)
-            {
-                case 1:
-                    AddContacts address1 = new AddContacts();
-                    //address1.createContact();
-                    Console.WriteLine("Entered Details of Person given as :");
-                    address1.addPerson();
-                    address1.Display();
-                    break;
-                default:
-                    Console.WriteLine("Please choice correct option");
-                    break;
-            }
-            value = false;
-            break;
+            case 3:
+                AddContacts editContact = new AddContacts();
+                editContact.GetcreateContact();
+                //editContact.addPerson();
+                editContact.EditContact();
+                editContact.Display();
+                break;
+            default:
+                Console.WriteLine("Please choice correct option");
+                break;
         }
+<<<<<<< HEAD
         Console.ReadLine(); 
 =======
         Console.WriteLine("\nWelcome to AddressBook System");
@@ -99,5 +113,8 @@ internal class Program
             Console.WriteLine("\nEmail Id : " + contact.Email);
         }
 >>>>>>> UC1-createContact
+=======
+        Console.ReadLine();
+>>>>>>> UC3-EditContact
     }
 }

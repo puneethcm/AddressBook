@@ -3,6 +3,7 @@ namespace AddressBook
 {
 	public class CreateContacts
 	{
+        public List<CreateContacts> addressList = new List<CreateContacts>();
         public string First_Name { get; set; }
         public string Last_Name { get; set; }
         public string Address { get; set; }
@@ -10,7 +11,9 @@ namespace AddressBook
         public string state { get; set; }
         public int zip { get; set; }
         public long PhoneNo { get; set; }
-        public string Email { get; set; }
+        public string Email { get; set; } 
+        
     }
+    
 }
 
