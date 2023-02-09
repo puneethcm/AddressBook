@@ -13,7 +13,7 @@ internal class Program
     {
         Console.WriteLine("Welcome To Address Book Program");
         Console.WriteLine("Choose any option below");
-        Console.WriteLine("1:Create Contact\n2:Add conctact\n3:Edit contact\n4:Delete Contact");
+        Console.WriteLine("1:Create Contact\n2:Add conctact\n3:Edit contact\n4:Delete Contact\n5:Add Multiple Contact");
         int choice = Convert.ToInt32(Console.ReadLine());
         switch (choice)
         {
@@ -42,7 +42,12 @@ internal class Program
             case 4:
                 DeleteContact deleteCobtact = new DeleteContact();
                 deleteCobtact.DeleteContacts();
-                
+                break;
+
+            case 5:
+                AddContacts addMulti = new AddContacts();
+                addMulti.AddMultipleContact();
+                addMulti.Display();
                 break;
             default:
                 Console.WriteLine("Please choice correct option");

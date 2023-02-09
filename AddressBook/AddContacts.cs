@@ -141,6 +141,20 @@ namespace AddressBook
             }
         }
 
+        public void AddMultipleContact()
+        {
+            Console.WriteLine("Enter Number of contact to Add");
+
+            int Number = Convert.ToInt32(Console.ReadLine());
+            //while loop is used to store contacts which user input as a number
+
+            while (Number > 0)
+            {
+
+                addPerson();
+                Number--;
+            }
+        }
         public void Display()
         {
             foreach (CreateContacts contact in addressList)
